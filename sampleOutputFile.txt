@@ -1,0 +1,48 @@
+Stock
+Symbol: TD
+Name: Toronto Dominion Bank
+Quantity: 100
+Price: 500
+Book value: 50009.99
+Stock
+Symbol: CIBC
+Name: cibc bank
+Quantity: 67
+Price: 350
+Book value: 23459.99
+Stock
+Symbol: RBC
+Name: RBC bank
+Quantity: 45
+Price: 400
+Book value: 18009.99
+Stock
+Symbol: BMO
+Name: Bank of Montreal
+Quantity: 100
+Price: 600
+Book value: 60009.99
+Mutual Fund
+Symbol: Tesla
+Name: Tesla Motors
+Quantity: 10
+Price: 1200
+Book value: 12000
+Mutual Fund
+Symbol: Google
+Name: Google inc.
+Quantity: 50
+Price: 1000
+Book value: 50000
+Mutual Fund
+Symbol: Apple
+Name: Apple inc.
+Quantity: 50
+Price: 1200
+Book value: 60000
+Mutual Fund
+Symbol: Solar City
+Name: Solar city inc.
+Quantity: 10
+Price: 2000
+Book value: 20000

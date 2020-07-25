@@ -1,0 +1,98 @@
+****************
+General Problem
+****************
+The problem of this assignment is to add a GUI interface and exception handling in order to make the program more user friendly.
+
+****************************
+Assumptions and Limitations
+****************************
+- You must enter the name of the file to be loaded through the command line when you run the program. The program will save to that file when you quit the program or close the window.
+- If file does not exist, the program will create a file with the name you provided in the command line.
+- When purchasing a new investment, none of the fields can be left blank
+- When purchasing a stock or mutual fund that already exists in the portfolio, the name will not be updated. The name that was saved previously will be kept.
+- When selling an investment, none of the fields can be left blank
+- When updating an investment, a valid price must be entered 
+- Entry for any search field is not mandatory
+- All floating point numbers are printed in 2 d.p.
+- Only one investment with a certain symbol is allowed
+- When a successful buy,sell,and update transaction occurs, textfields will be cleared
+- When you initially go to update command, the price field contains the stored price for that investment, if investments exist in the portfolio. 
+  To update or change a price, just edit the price field and hit save.
+- Every time search is hit, the search results box is cleared and the search results for the current search criteria is printed 
+
+*********************
+Building the program
+*********************
+To run on command prompt:
+2) to compile: javac -cp . src/*.java
+3) to run: java -cp . src/Portfolio fileName
+
+**********
+Test Plan
+**********
+1) Go to commands menu and hit buy
+
+2) Buy a stock 
+	Enter Symbol: TD, Name: Toronto Dominion Bank, quantity: 100, and price: 100.
+
+3) Buy a mutual fund
+	Enter Symbol: Apple, Name: Apple inc., quantity: 200, and price: 200.
+
+4) Go to commands menu and hit get gain
+	getgain should be: -64.98
+	
+5) Go to commands menu and hit buy. Buy a stock
+	Enter Symbol: TD, Name: Toronto Dominion Bank, quantity: 200, and price: 50.
+
+5) Buy a stock
+	Enter Symbol: Apple, Name: Apple inc., quantity: 50, and price: 50.
+	It should result in an error as a mutual fund with the same symbol is already present.
+
+6) Go to commands menu and Hit update. Update TD price to 200. Hit next. Update Apple price to 600.
+
+7) Go to commands menu and hit get gain
+	getgain should be: 119925.03
+	
+8) Go to commands menu and hit search. Enter TD for symbol. Hit Search.
+	Should print stock TD
+
+9) Enter aPPle for name and hit search.
+	Should print mutual fund Apple
+
+10) Enter 10 for low price and 500 for high price. Hit search.
+	Should print stock TD
+	
+11) Enter 800 for low price and 5 for high price. Hit search.
+	Should print both stock TD and mutual fund Apple.
+	
+12) Enter TD for symbol, dominion for name and 10 for low price and 1000 for high price. Hit search.
+	Should print stock TD
+
+13) Leave all search fields empty. Hit search.
+	Should print both stock TD and mutual fund Apple.
+
+14) Go to commands menu and hit sell.
+
+15) Sell symbol TD, quantity 50, price 50.
+	payments received should be: 9990.01
+
+16) Sell symbol Apple, quantity 200, price 500.
+	Should have sold all quantity, therefore removing it from portfolio.
+	payments received should be: 119955.0 	
+
+17) Sell symbol TD, quantity 1000, price 50.
+	Should result in error as 1000 stocks of TD is not present in portfolio.
+
+18) Sell symbol Google, quantity 100, price 50.
+	Should result in error as the investment does not exist in portfolio.
+
+19) Go to commands menu and hit get gain.
+	get gain should be: 33306.69
+
+20) Check user proofing in buy command by entering empty string for symbol and title, negative number, 0, and string for quantity and price.
+
+21) Check user proofing in sell command. Check by entering empty string for symbol, negative number, 0, and string for quantity and price.
+
+22) Check user proofing in update. Check by entering negative number, 0, or string for price.
+
+23) Check user proofing in search. Check by entering negative number, or string for low price and high price.
